@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\GPT_IMAGE_API.props" />
+</Project>
