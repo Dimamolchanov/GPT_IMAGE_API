@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\GPT_IMAGE_API.props" />
-</Project>
