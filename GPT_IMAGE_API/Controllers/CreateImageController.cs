@@ -25,7 +25,7 @@ namespace GPT_IMAGE_API.Controllers
 				Prompt = model.Text,
 				Style = model.Style
 			};
-			return dataProvider.Get(createImageCompletionRequestModel).Data.Select(x => x.FileName);
+			return dataProvider.Get(createImageCompletionRequestModel).Data.Select(x => x.Url);
 		}
 	}
 

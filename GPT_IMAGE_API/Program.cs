@@ -8,10 +8,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<OpenAiCreateImageCompletionClient>(x => new RestApiOpenAiCreateImageCompletionClient("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"));
+builder.Services.AddSingleton<OpenAiCreateImageCompletionClient>(x => new RestApiOpenAiCreateImageCompletionClient(builder.Configuration.GetSection("OPENAI_API_KEY").Value));
 builder.Services.AddSingleton<CreateCompletionDataProvider>(x => new CreateImageCompletionDataProvider(x.GetService<OpenAiCreateImageCompletionClient>(), new GPT_IMAGE_API.Utils.FileSaver()));
 
-builder.Services.AddSingleton<OpenAiEditImageCompletionClient>(x => new RestApiOpenAiEditImageCompletionClient("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"));
+builder.Services.AddSingleton<OpenAiEditImageCompletionClient>(x => new RestApiOpenAiEditImageCompletionClient(builder.Configuration.GetSection("OPENAI_API_KEY").Value));
 builder.Services.AddSingleton<EditCompletionDataProvider>(x => new EditImageCompletionDataProvider(x.GetService<OpenAiEditImageCompletionClient>(), new GPT_IMAGE_API.Utils.FileSaver()));
 
 builder.Services.AddEndpointsApiExplorer();

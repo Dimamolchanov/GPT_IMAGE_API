@@ -4,7 +4,7 @@ namespace GPT_IMAGE_API.Utils
 {
 	public class FileSaver
 	{
-		private String folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images/dogs");
+		private String folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "images/barbie_girls");
 		public async Task Save(String url, String fileName) 
 		{
 			using (HttpClient httpClient = new HttpClient())

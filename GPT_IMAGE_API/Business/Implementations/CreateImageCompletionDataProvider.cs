@@ -30,13 +30,13 @@ namespace GPT_IMAGE_API.Business
 				Size = "1024x1024",
 			};
 			OpenAiCreateImageCompletionModel aiModel = client.GetImageComplitionData(model);
-			Int32 count = 67;
+			Int32 count = 7;
 			List<Completion> data = new List<Completion>();
 			foreach (String url in aiModel.Urls) 
 			{
-				String fileName = $"dog{count}.png";
-				SaveFile(url, fileName).GetAwaiter().GetResult();
-				data.Add(new Completion { FileName = fileName });
+				String fileName = $"brush{count}.png";
+				//SaveFile(url, fileName).GetAwaiter().GetResult();
+				data.Add(new Completion { FileName = fileName, Url = url });
 				count++;
 			}
 			return new CompletionModel { Data = data };
